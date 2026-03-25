@@ -36,3 +36,29 @@ KitchenKing was built to solve these exact pain points by focusing on utility, c
 *   **Frontend**: React, Tailwind CSS, Lucide React (Icons)
 *   **Backend**: Node.js, Express
 *   **Typography**: Lexend (for clean, modern readability)
+
+---
+
+## Screenshots
+
+*Coming soon*
+
+---
+
+## Tradeoffs & Design Decisions
+
+| Decision | What I chose | What I gave up | Why |
+|----------|-------------|----------------|-----|
+| **Dark calm UI over bright standard** | Deep green dark theme | Familiar light recipe app aesthetic | Reduces eye strain in kitchen environments; creates a calming mood that counters end-of-day fatigue |
+| **Cooking Mode (stripped UI) over rich UI** | Distraction-free step view | Rich media, tips, comments | Cognitive load in the kitchen is already high — every extra element is friction |
+| **One-hand navigation over feature density** | Large touch targets, minimal taps | More features per screen | Hands are often dirty or occupied while cooking — usability beats feature richness |
+| **Integrated timers over linking to clock app** | Native in-step timers | Simpler codebase | Switching apps mid-cook breaks flow; the timer must live where the instruction lives |
+| **Upfront nutrition tags over detailed breakdowns** | Summary dietary labels | Full macro tracking | Couples making weeknight decisions need a quick yes/no signal, not a spreadsheet |
+
+---
+
+## What I Learned
+
+- The best cooking UX removes decisions, it doesn't add features. Every design choice was about reducing what the user has to think about mid-cook.
+- **One-hand usability** is an underrated constraint — designing for a messy hand forces you to simplify everything else.
+- Dark mode isn't just aesthetic — in a kitchen with warm lighting, a dark app is genuinely more comfortable to read at a glance.
