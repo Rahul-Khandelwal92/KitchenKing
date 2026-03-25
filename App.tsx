@@ -7,7 +7,7 @@ import {
   Home, Compass, Heart, 
   Search, Bell, ArrowLeft, Share2, 
   PlayCircle, Bookmark, Star, ArrowRight,
-  ChevronRight, Mic, X, Clock, Users, Loader2
+  ChevronRight, Mic, X, Clock, Users, Loader2, Crown
 } from 'lucide-react';
 import { RecipeCard } from './components/RecipeCard';
 import { Timer } from './components/Timer';
@@ -106,9 +106,9 @@ export default function App() {
 
   // 1. HOME VIEW
   const renderHome = () => (
-    <main className="pt-24 pb-24 px-4 animate-fadeIn">
+    <main className="pt-16 pb-24 px-4 animate-fadeIn max-w-3xl mx-auto">
       {/* Search Fake Input */}
-      <div className="py-4" onClick={() => setView('SEARCH')}>
+      <div className="pb-4" onClick={() => setView('SEARCH')}>
         <div className="flex w-full items-center h-14 bg-surfaceHighlight rounded-xl px-4 shadow-sm border border-transparent hover:border-primary/50 transition-colors">
           <Search className="text-textMuted mr-3" size={20} />
           <span className="text-textMuted text-base">Search recipes, ingredients...</span>
@@ -157,14 +157,14 @@ export default function App() {
             <Loader2 className="animate-spin text-primary" size={32} />
         </div>
       ) : (
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Show all recipes, removed slice(0, 5) limit */}
             {recipes.map(recipe => (
               <RecipeCard key={recipe.id} recipe={recipe} onClick={handleRecipeClick} />
             ))}
             
             {recipes.length === 0 && (
-                <div className="text-center py-10 opacity-60">
+                <div className="text-center py-10 opacity-60 md:col-span-2">
                     <p>No recipes found.</p>
                 </div>
             )}
@@ -177,7 +177,8 @@ export default function App() {
   const renderSearch = () => (
     <div className="min-h-screen bg-background animate-fadeIn">
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-surfaceHighlight">
-        <div className="flex items-center p-4 justify-between">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center p-4 justify-between">
           <button onClick={() => setView('HOME')} className="p-2 -ml-2 text-white">
              <ArrowLeft size={24} />
           </button>
@@ -196,9 +197,10 @@ export default function App() {
             />
           </div>
         </div>
+        </div>
       </header>
       
-      <main className="px-4 pb-20">
+      <main className="px-4 pb-20 max-w-3xl mx-auto">
         {searchQuery === '' && (
             <section className="mt-4">
             <h3 className="text-white text-lg font-bold mb-3">Recent Searches</h3>
@@ -217,9 +219,11 @@ export default function App() {
                 <h3 className="text-white text-lg font-bold">Results ({searchQuery ? searchResults.length : recipes.length})</h3>
                 <span className="text-xs font-semibold text-textMuted uppercase tracking-widest">Recommended</span>
             </div>
-            {(searchQuery ? searchResults : recipes).map(recipe => (
-               <RecipeCard key={recipe.id} recipe={recipe} onClick={handleRecipeClick} compact />
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {(searchQuery ? searchResults : recipes).map(recipe => (
+                   <RecipeCard key={recipe.id} recipe={recipe} onClick={handleRecipeClick} compact />
+                ))}
+            </div>
         </section>
       </main>
     </div>
@@ -232,8 +236,9 @@ export default function App() {
     
     return (
       <div className="min-h-screen bg-background pb-32 animate-fadeIn">
-        {/* Nav */}
-        <div className="sticky top-0 z-50 flex items-center bg-background/80 backdrop-blur-md p-4 justify-between border-b border-surfaceHighlight">
+        <div className="max-w-3xl mx-auto">
+          {/* Nav */}
+          <div className="sticky top-0 z-50 flex items-center bg-background/80 backdrop-blur-md p-4 justify-between border-b border-surfaceHighlight">
           <button onClick={() => setView('HOME')} className="p-2 -ml-2 text-white rounded-full hover:bg-white/10">
             <ArrowLeft size={24} />
           </button>
@@ -244,8 +249,8 @@ export default function App() {
         </div>
 
         {/* Hero */}
-        <div className="w-full aspect-[4/3] relative bg-surfaceHighlight">
-          <img src={activeRecipe.image} className="w-full h-full object-cover" />
+        <div className="w-full aspect-[21/9] relative bg-surfaceHighlight">
+          <img src={activeRecipe.image} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-90"></div>
           <div className="absolute bottom-6 left-6">
              <span className="bg-primary text-background text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">
@@ -320,11 +325,12 @@ export default function App() {
                     </label>
                 ))}
             </div>
+          </div>
         </div>
 
         {/* Sticky CTA */}
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/95 backdrop-blur-md border-t border-surfaceHighlight z-50">
-            <div className="max-w-screen-sm mx-auto flex gap-3">
+            <div className="max-w-3xl mx-auto flex gap-3">
                 <button 
                   onClick={startCooking}
                   className="flex-1 bg-primary text-background h-14 rounded-xl flex items-center justify-center gap-2 font-bold text-lg active:scale-95 transition-transform shadow-[0_0_20px_rgba(25,230,111,0.3)]"
@@ -352,8 +358,9 @@ export default function App() {
 
     return (
       <div className="min-h-screen bg-background flex flex-col font-sans animate-fadeIn">
-        {/* Header */}
-        <div className="sticky top-0 z-50 bg-background/95 backdrop-blur-md">
+        <div className="max-w-3xl mx-auto w-full flex flex-col flex-1">
+          {/* Header */}
+          <div className="sticky top-0 z-50 bg-background/95 backdrop-blur-md">
             <div className="flex items-center p-4 pb-2 justify-between">
                 <button onClick={() => setView('DETAILS')} className="p-2 -ml-2 hover:bg-white/10 rounded-full text-white">
                     <X size={24} />
@@ -382,6 +389,7 @@ export default function App() {
                         src={activeRecipe.image} 
                         className="w-full h-full object-cover opacity-80"
                         alt="Step visual"
+                        referrerPolicy="no-referrer"
                     />
                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                         <p className="text-white/60 font-medium text-sm">Visual reference coming soon</p>
@@ -405,11 +413,12 @@ export default function App() {
             {/* Timer if needed */}
             {step.durationSeconds && <Timer durationSeconds={step.durationSeconds} />}
 
-        </main>
+          </main>
+        </div>
 
         {/* Footer Nav */}
         <div className="fixed bottom-0 left-0 right-0 p-4 pb-8 bg-gradient-to-t from-background via-background to-transparent">
-            <div className="flex gap-4 max-w-xl mx-auto">
+            <div className="flex gap-4 max-w-3xl mx-auto">
                 <button 
                     disabled={cookingStep === 0}
                     onClick={() => setCookingStep(prev => prev - 1)}
@@ -438,6 +447,7 @@ export default function App() {
   // 5. SAVED VIEW
   const renderSaved = () => (
     <div className="min-h-screen bg-background pb-24 animate-fadeIn">
+      <div className="max-w-3xl mx-auto">
         <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md px-4 pt-6 pb-4 border-b border-surfaceHighlight">
             <h1 className="text-white text-3xl font-bold">Saved Recipes</h1>
             
@@ -448,39 +458,42 @@ export default function App() {
             </div>
         </header>
 
-        <div className="p-4 flex flex-col gap-4">
+        <div className="p-4">
             {isLoading ? <Loader2 className="mx-auto animate-spin text-primary"/> : savedRecipes.size === 0 ? (
                 <div className="text-center py-20 opacity-50">
                     <Heart size={48} className="mx-auto mb-4 text-textMuted" />
                     <p className="text-white text-lg">No saved recipes yet.</p>
                 </div>
             ) : (
-                recipes.filter(r => savedRecipes.has(r.id)).map(recipe => (
-                   <div 
-                      key={recipe.id}
-                      onClick={() => handleRecipeClick(recipe)}
-                      className="flex gap-4 bg-surface p-3 rounded-2xl border border-surfaceHighlight items-center cursor-pointer group active:scale-95 transition-transform"
-                    >
-                        <img src={recipe.image} className="w-20 h-20 rounded-xl object-cover bg-surfaceHighlight" />
-                        <div className="flex-1">
-                            <h4 className="text-white font-bold mb-1">{recipe.title}</h4>
-                            <div className="flex gap-2 mb-1">
-                                <span className="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded-full font-bold uppercase">{recipe.tags[0]}</span>
-                            </div>
-                            <p className="text-textMuted text-xs flex items-center gap-1">
-                                <Clock size={12} /> {recipe.totalTime} mins
-                            </p>
-                        </div>
-                        <button 
-                            onClick={(e) => toggleSave(recipe.id, e)}
-                            className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {recipes.filter(r => savedRecipes.has(r.id)).map(recipe => (
+                       <div 
+                          key={recipe.id}
+                          onClick={() => handleRecipeClick(recipe)}
+                          className="flex gap-4 bg-surface p-3 rounded-2xl border border-surfaceHighlight items-center cursor-pointer group active:scale-95 transition-transform"
                         >
-                            <Heart fill="currentColor" size={20} />
-                        </button>
-                    </div>
-                ))
+                            <img src={recipe.image} className="w-20 h-20 rounded-xl object-cover bg-surfaceHighlight" referrerPolicy="no-referrer" />
+                            <div className="flex-1">
+                                <h4 className="text-white font-bold mb-1">{recipe.title}</h4>
+                                <div className="flex gap-2 mb-1">
+                                    <span className="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded-full font-bold uppercase">{recipe.tags[0]}</span>
+                                </div>
+                                <p className="text-textMuted text-xs flex items-center gap-1">
+                                    <Clock size={12} /> {recipe.totalTime} mins
+                                </p>
+                            </div>
+                            <button 
+                                onClick={(e) => toggleSave(recipe.id, e)}
+                                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+                            >
+                                <Heart fill="currentColor" size={20} />
+                            </button>
+                        </div>
+                    ))}
+                </div>
             )}
         </div>
+      </div>
     </div>
   );
 
@@ -490,13 +503,16 @@ export default function App() {
       {/* Top Bar (Only on Home) */}
       {view === 'HOME' && (
         <div className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
-          <div className="flex items-center p-4 pb-2 justify-between">
+          <div className="flex items-center p-4 pb-2 justify-between max-w-3xl mx-auto">
             <div className="flex items-center gap-3">
                <div className="w-10 h-10 rounded-full border-2 border-primary p-0.5">
-                  <img src={PROFILE_IMG} className="w-full h-full rounded-full object-cover" />
+                  <img src={PROFILE_IMG} className="w-full h-full rounded-full object-cover" referrerPolicy="no-referrer" />
                </div>
                <div>
-                  <p className="text-primary text-[10px] font-bold uppercase tracking-widest">Kitchen Mode</p>
+                  <div className="flex items-center gap-1 text-primary mb-0.5">
+                     <Crown size={14} strokeWidth={2.5} />
+                     <p className="text-[11px] font-bold uppercase tracking-widest">KitchenKing</p>
+                  </div>
                   <h2 className="text-white text-lg font-bold leading-none">{COUPLE_NAME}</h2>
                </div>
             </div>
@@ -517,7 +533,7 @@ export default function App() {
       {/* Bottom Nav (Not on Cooking/Search/Details) */}
       {(view === 'HOME' || view === 'SAVED') && (
         <nav className="fixed bottom-0 left-0 right-0 bg-background/90 backdrop-blur-lg border-t border-surfaceHighlight pb-6 pt-3 px-8 z-40">
-          <div className="flex justify-between items-center max-w-md mx-auto">
+          <div className="flex justify-between items-center max-w-3xl mx-auto md:px-12">
             <button onClick={() => setView('HOME')} className={`flex flex-col items-center gap-1 ${view === 'HOME' ? 'text-primary' : 'text-textMuted'}`}>
               <Home size={24} strokeWidth={view === 'HOME' ? 3 : 2} />
               <span className="text-[10px] font-bold">TODAY</span>

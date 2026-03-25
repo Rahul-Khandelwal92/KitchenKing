@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Lexend', sans-serif;
+  --color-primary: #19e66f;
+  --color-background: #112118;
+  --color-surface: #1c2c24;
+  --color-surfaceHighlight: #29382f;
+  --color-textMain: #ffffff;
+  --color-textMuted: #9db8a9;
+  
+  --animate-fadeIn: fadeIn 0.3s ease-in-out;
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: white;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

@@ -16,13 +16,14 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, onClick, compact
           onClick={() => onClick(recipe)}
           className="flex bg-surface rounded-2xl overflow-hidden shadow-sm border border-surfaceHighlight mb-4 cursor-pointer active:scale-95 transition-transform"
         >
-          <div className="relative w-32 h-32 shrink-0">
+          <div className="relative w-24 h-24 shrink-0 bg-surfaceHighlight">
             <img 
               src={recipe.image} 
               alt={recipe.title} 
               className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
             />
-            <div className="absolute top-2 left-2 bg-black/60 backdrop-blur-md rounded-lg px-2 py-0.5 flex items-center gap-1">
+            <div className="absolute bottom-2 right-2 bg-black/60 backdrop-blur-md rounded-lg px-2 py-0.5 flex items-center gap-1 z-10">
               <Clock size={14} className="text-primary" />
               <span className="text-white text-[10px] font-bold">{recipe.totalTime} min</span>
             </div>
@@ -45,19 +46,20 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, onClick, compact
       onClick={() => onClick(recipe)}
       className="group relative flex flex-col items-stretch justify-start rounded-xl overflow-hidden bg-surface shadow-md mb-6 cursor-pointer active:scale-95 transition-transform"
     >
-      <div className="relative w-full aspect-[16/10]">
+      <div className="relative w-full h-32 bg-surfaceHighlight">
         <img 
             src={recipe.image} 
             alt={recipe.title}
             className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
         />
-        <div className="absolute top-3 left-3 flex gap-2">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+        <div className="absolute bottom-3 right-3 flex gap-2 z-10">
             <div className="bg-primary text-background px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg">
                 <Clock size={14} />
                 {recipe.totalTime} MINS
             </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
       </div>
       
       <div className="flex w-full flex-col gap-2 p-4">
@@ -87,7 +89,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, onClick, compact
                 <div className="flex -space-x-2">
                     {AVATARS.map((url, i) => (
                         <div key={i} className="w-6 h-6 rounded-full border-2 border-surface overflow-hidden">
-                            <img src={url} className="w-full h-full object-cover" />
+                            <img src={url} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                         </div>
                     ))}
                 </div>

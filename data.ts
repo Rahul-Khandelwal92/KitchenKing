@@ -5,7 +5,7 @@ export const RECIPES: Recipe[] = [
     id: '1',
     title: 'One-Pan Lemon Chicken',
     subtitle: 'Dinner • High Protein',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCTpQYGZXFmNIYR-n1OKJALaOjCdj-UJAMgRJNDoGEYXn7RawDwmVCu_GOBAAMKeNi8EEHQw1bDQntLJ8LUzVBBneNCEoG44mfgpJ_69ugtRzqin1nUqbdAs9Eu0FW9nl-SgQxBln8VMLQUegMfuhgDRcBAR9551PnQ3hI0PMwFTnHLiaIw_5Kx9Jrdhi_5ekb8eIJr9FYdF56zQGpqerPnci4h2GEJYOUzut8vGXE6NM7BiuVzxTrk6KNmYM-_BSnxtlS-1y37_uKP',
+    image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80',
     rating: 4.8,
     reviewCount: 124,
     cooksThisWeek: 2300,
@@ -39,7 +39,7 @@ export const RECIPES: Recipe[] = [
     id: '2',
     title: '15-Min Miso Salmon Bowl',
     subtitle: 'Quick Lunch • Omega-3',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCJ-gVrjy27K2KuBfVf-BUgHg-rFp8hxk-ftYuKaNgIo2KqWAR6rUoszpXmq4V9WNkODwA4ojti1_4-9O9jYfh7Xo-5nPkaCaR6-g9riK7cS9a-mfWTrWc-TzXmxYCdaFaSWz-dOOylYuSYUrdPkLkmsFwYzvB4L6tVLaLyPoajOx-hGJ-vzlOnbXFbBncNeGxnB2rq7zQveBkZMyUocHB_iB53FbLkNkGKtB3_ealetnoAGeVxr0wrInFq9dPshiLtL2hO2WF-8P8b',
+    image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80',
     rating: 4.9,
     reviewCount: 89,
     cooksThisWeek: 1500,
@@ -74,7 +74,7 @@ export const RECIPES: Recipe[] = [
     id: '3',
     title: 'Spicy Salmon Poke Bowl',
     subtitle: 'High Protein • Under 500 kcal',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBvd-y3IH-IG04rjqLB7k3FRk0yAkdAVj5vGRhNG8aQ6PFdpJI5qEm_CSe7N9LRP1Mtkfs5alTMllLGM7gurnjdjYxIXTz1n7OzCWRh22Ipsm-ILSKLBCo83M9o682O99yGk3b2voj951_Ig7-7OGiRxBmg9nVxzwP3A2nZwwoQi3_UVHnxBlXthh4YnBFDpABKFJ9daiYY668KmHuSbJbXjK2YxLcPTc0YaloLGHHatkYhXl4ZbHFTEvL7zFKtRgVdcc3ouYDCPwAG',
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80',
     rating: 4.9,
     reviewCount: 120,
     cooksThisWeek: 800,
@@ -97,7 +97,7 @@ export const RECIPES: Recipe[] = [
     id: '4',
     title: 'Creamy Avocado Linguine',
     subtitle: 'Vegetarian • One Pot',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB8MMQFBmK8PvX757gwPe3AwsZCR9JWeGycYRyom9gUwPf3G_figHR6Ijg4Psb2DJSi8n6gETI6iwgJCg_Kcedxv8Nvfn47H_pGS9CuB0jAo0s8Vocz0NmcS8F4HMp44VAZLKGcXQbY5KroYtHWUgEWxtDc7fIlI4Jb_72JmsCD8tm_BqV2y1BmKId-93QfNg56b7-LCKPPsr0YVFyyHLbNhTDNAbJTQlf3B88I6nf7ibqIHcZDqctwiFJpmUBiO-qrU6mV1Hk62O3n',
+    image: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80',
     rating: 4.7,
     reviewCount: 85,
     cooksThisWeek: 400,
@@ -119,6 +119,6 @@ export const RECIPES: Recipe[] = [
 ];
 
 export const AVATARS = [
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuAEc9DghQ2CdY7GvCWXJibZgse__vARKSAocHvUfEWeJyH5SXf37nEmsHedtLJxG56KGlcoa1qOb3FAh4OBf50QQ20K_hXWfB4tgrI_ffo_oYZ2zXLh49JvY6PYiiknnxQfV0yINP6k_ga4GzPYqAa6mfz2UiPFdtbvL9opK9l5wgUTQrSNDVGR4LK_gDXzcRUj7UkjVKOUeZCHluWnCjmCLs-KrhRwPelZb4OZoHuHzBYwDLS6AjJc2efqA1A9mBgOaB4uqeESydhW',
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuDHtOrjgiZ0FJYzKPJuefycWQk-vfY11lbz8CU-SozI7kwtEgtxNZforff-YuI0bNxVIBoAmSNCKn1Zv7ahHbETMCndnuRxRq7ZzKL-ufA54R1Yt49TIiE-gFnRDqlb1dCVoR5FLsHrq_S4kSdKAo71czBKzqOluuncRIIAnqW8VI5s0q_PLsqdVD_0mrrb9AEd2kboQf4Zy83Rn2uX1w3GvmaX8Evi-ZATHbPQ53_mxYFGC65spMiBIG6jDWalqFo7CaUJs20_R19C'
+    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80',
+    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80'
 ];

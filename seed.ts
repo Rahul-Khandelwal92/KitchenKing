@@ -99,7 +99,7 @@ function getGrade(score) {
   return 'C';
 }
 
-function generateRecipes() {
+export function generateRecipes() {
   const recipes = [];
   let idCounter = 1;
 
@@ -185,4 +185,4 @@ function generateRecipes() {
   return recipes;
 }
 
-module.exports = { generateRecipes };
+

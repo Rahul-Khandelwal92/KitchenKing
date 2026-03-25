@@ -1,6 +1,6 @@
 import { Recipe } from './types';
 
-const API_BASE = 'http://localhost:3001/api';
+const API_BASE = '/api';
 const MOCK_DELAY = 500;
 
 // Helper to check if backend is running, else fallback to null (or handle gracefully)
